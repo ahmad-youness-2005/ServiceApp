@@ -10,52 +10,51 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   Color appColor = const Color(0xE30856EC);
+
   @override
   void initState() {
-  super.initState();
+    super.initState();
 
-  Future.delayed(Duration(seconds: 5), () {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => Home()),
+    Future.delayed(
+      const Duration(seconds: 5),
+          () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const Home()),
+        );
+      },
     );
-  });
-}
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: appColor,
-        body: Column(
+    return Scaffold(
+      backgroundColor: appColor,
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(50), 
+              borderRadius: BorderRadius.circular(990),
               child: Image.asset(
-                'assets/logo.png',
-                width: 100,
-                height: 100,
+                'assets/images/ServeULogo.png',
+                width: 150,
+                height: 150,
                 fit: BoxFit.cover,
               ),
             ),
-            Text(
-              'ServeU',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.bold
-              ),
+            const SizedBox(
+              height: 20,
             ),
-            Text(
+            const Text(
               'Welcome to our app',
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 24,
                 color: Colors.white,
               ),
             ),
           ],
-          
         ),
-        
       ),
     );
   }
