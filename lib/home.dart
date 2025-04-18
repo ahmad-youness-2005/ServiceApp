@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_project/robot.dart';
 import 'package:mobile_project/services_options.dart';
 import 'package:mobile_project/tabs.dart';
+import 'package:mobile_project/navigation_bar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -21,63 +22,7 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           toolbarHeight: 120,
           backgroundColor: appColor,
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Icon(Icons.account_circle_outlined,
-                      color: Colors.white),
-                  const SizedBox(width: 10),
-                  const Text(
-                    "Good Afternoon , Ahmad",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      letterSpacing: -0.03 * 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Spacer(),
-                  const Icon(
-                    size: 32,
-                    Icons.circle_notifications_outlined,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-              const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.white,
-                ),
-                width: 350,
-                height: 44,
-                child: const TextField(
-                  decoration: InputDecoration(
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                    fillColor: Colors.white,
-                    filled: true,
-                    hintText: 'Search for...',
-                    hintStyle:
-                        TextStyle(fontSize: 14, letterSpacing: -0.03 * 14),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                      borderSide: BorderSide.none,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      size: 18.0,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          title: NavBar(),
         ),
         body: SingleChildScrollView(
           child: Column(
