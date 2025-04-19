@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+  final IconData screenIcon;  // Changed from Icon to IconData
+  final String screenTitle;
+
+  const NavBar({super.key, required this.screenIcon, required this.screenTitle});
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -21,11 +24,11 @@ class _NavBarState extends State<NavBar> {
           children: [
             GestureDetector(
               onTap: () {},
-              child: Icon(Icons.account_circle_outlined, color: Colors.white),
+              child: Icon(widget.screenIcon, color: Colors.white), // Now correctly uses widget.screenIcon
             ),
             const SizedBox(width: 10),
             Text(
-              "Good Afternoon , Ahmad",
+              widget.screenTitle,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: sizeFont,
@@ -51,8 +54,7 @@ class _NavBarState extends State<NavBar> {
           height: 44,
           child: const TextField(
             decoration: InputDecoration(
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+              contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
               fillColor: Colors.white,
               filled: true,
               hintText: 'Search for...',
