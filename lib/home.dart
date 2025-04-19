@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_project/robot.dart';
-import 'package:mobile_project/services_options.dart';
-import 'package:mobile_project/tabs.dart';
-import 'package:mobile_project/navigation_bar.dart';
+import 'package:mobile_project/robot.dart'; // Adjust the import if necessary
+import 'package:mobile_project/services_options.dart'; // Adjust the import if necessary
+import 'package:mobile_project/tabs.dart'; // Adjust the import if necessary
+import 'package:mobile_project/navigation_bar.dart'; // Adjust the import if necessary
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,7 +20,10 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         toolbarHeight: 120,
         backgroundColor: appColor,
-        title: const NavBar(),
+        title: NavBar(
+          screenIcon: Icons.account_circle_outlined, // Correct usage here
+          screenTitle: 'Good Afternoon , Ahmad',
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
